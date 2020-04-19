@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>bellomuboye - JavaScript Task 3</title>
+  </head>
+  <body>
+    <script>
+      function divisible(num) {
+        var data = [];
+
+        //For loop with boundary set to parameter entered in function
+        for (let i = 1; i <= num; i++) {
+          //The variable n will be pushed to the array at the end of each iteration
+          //By default, it is set to the index of the current iteration
+          let n = i;
+
+          //Conditional statements check if the index is divisible by 2, 3 and 5 and replace by yu, gi and oh.
+          //If divisble by more than one number, indicate that by separating them with a hyphen
+          //Two levels of condition, the first checks if the index is divisible by 2, 3 and 5. No else so all conditions apply
+          //If it is, a second condition is run for each factor. This checks if the value is still as default
+          //(meaning it has not been replaced) and replaces it accordingly, else it appends the characters with a hyphen in front
+          if (i % 2 === 0) {
+            if (n == i) {
+              n = "yu";
+            } else {
+              n = n + "-yu";
+            }
+          }
+          if (i % 3 === 0) {
+            if (n == i) {
+              n = "gi";
+            } else {
+              n = n + "-gi";
+            }
+          }
+          if (i % 5 === 0) {
+            if (n == i) {
+              n = "oh";
+            } else {
+              n = n + "-oh";
+            }
+          }
+
+          data.push(n);
+        }
+        console.log(data);
+      }
+      divisible(100);
+      divisible(30);
+    </script>
+  </body>
+</html>
